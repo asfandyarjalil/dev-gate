@@ -1,3 +1,4 @@
+const { sumNumb } = require("../utils/sumNumber");
 let isValidNumber = async (req, res, next) => {
   try {
     let { card_number, cvv, holder_name, month, year } = req.body;
@@ -36,6 +37,7 @@ let isValidNumber = async (req, res, next) => {
       if (reverseCardNumber[i + 1]) {
         result = Number(reverseCardNumber[i + 1]) * 2;
         if (result > 9) {
+          // this function add number like  12 : 1 + 2  , 36: 3 + 6
           s2 += await sumNumb(result);
         } else {
           s2 += Number(result);
@@ -55,13 +57,4 @@ let isValidNumber = async (req, res, next) => {
     console.log(err);
   }
 };
-async function sumNumb(value) {
-  try {
-    let n = value.toString().split("");
-    let sum = n.reduce((pv, cv) => Number(pv) + Number(cv));
-    return Number(sum);
-  } catch (err) {
-    console.log(err);
-  }
-}
 module.exports = isValidNumber;

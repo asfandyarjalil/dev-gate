@@ -1,8 +1,34 @@
 # dev-gate
 
-# Answer 1 : It will print 100 (100 times) because of the timeout function the code becomes non-block
+# Installation
 
-# Answer 2 : It will print "hello
+1.  Once you download the folder
+2.  Open terminal go the project directory and type the below command :
+
+```shell
+$ npm install
+```
+
+3. After that create <h4>.env</h4>file in root.
+   DATABASE="paste your mongodb string"
+   PORT=8080
+
+4. 
+
+```shell
+    $ npm start
+```
+
+5. open your browser and paste the following url
+   "http://localhost:8080/"
+
+# Answer 1 :
+
+It will print 100 (100 times) because of the timeout function the code becomes non-block
+
+# Answer 2 :
+
+It will print "hello
 
 # Answer 3 :
 
