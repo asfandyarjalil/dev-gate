@@ -20,7 +20,7 @@ let isValidNumber = async (req, res, next) => {
         message: "please enter expiry date",
       });
     }
-    if (!cvv || !cvv.length != 3) {
+    if (!cvv || cvv.length != 3) {
       return res.send({
         success: false,
         message: "please enter a valid 3 digit cvv",
@@ -46,7 +46,7 @@ let isValidNumber = async (req, res, next) => {
     if (result % 10 === 0) {
       next();
     } else {
-      return res.status(400).json({
+      return res.send({
         success: false,
         message: "Invalid Card Number",
       });

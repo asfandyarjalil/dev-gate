@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 require("dotenv").config();
 
-const userSchema = mongoose.Schema(
+const paymentSchema = mongoose.Schema(
   {
     card_number: {
       type: String,
@@ -21,6 +21,6 @@ const userSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-const User = mongoose.model("User", userSchema);
+const Payment = mongoose.model("Payment", paymentSchema);
 
-module.exports = { User };
+module.exports = { Payment };

@@ -1,4 +1,4 @@
-const { User } = require("../models/user");
+const { Payment } = require("../models/paymentSchema");
 const { encryptIt, compareIt } = require("../utils/encrypt");
 exports.checkout = async (req, res) => {
   try {
@@ -6,7 +6,7 @@ exports.checkout = async (req, res) => {
     const hashed_card_number = await encryptIt(card_number);
     const hashed_cvv = await encryptIt(cvv);
 
-    let user = new User({
+    let payment = new Payment({
       card_number: hashed_card_number,
       cvv: hashed_cvv,
       holder_name,
@@ -15,12 +15,16 @@ exports.checkout = async (req, res) => {
         year,
       },
     });
-    await user.save();
+    await payment.save();
     return res.send({
       success: true,
-      message: "Great, everything is fine",
+      message: "Congratulations! payment saved successfully",
     });
   } catch (err) {
     console.log(err);
+    res.send({
+      success: false,
+      message: "somthing went wrong! please try again",
+    });
   }
 };
