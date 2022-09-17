@@ -15,7 +15,7 @@ $ npm install
    <br>
    `PORT`=8080
 
-4.
+4. the run the command
 
 ```shell
     $ npm start
