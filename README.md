@@ -24,6 +24,8 @@ $ npm install
 5. open your browser and paste the following url
    "http://localhost:8080/"
 
+<br>
+<br>
 # Answer 1 :
 
 It will print 100 (100 times) because of the timeout function the code becomes non-block
