@@ -26,6 +26,7 @@ $ npm install
 
 <br>
 <br>
+
 # Answer 1 :
 
 It will print 100 (100 times) because of the timeout function the code becomes non-block
