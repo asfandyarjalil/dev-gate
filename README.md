@@ -9,11 +9,11 @@
 $ npm install
 ```
 
-3. After that create <h4>.env</h4>file in root.
+3. After that create <h6>.env</h6> file in root.
    DATABASE="paste your mongodb string"
    PORT=8080
 
-4. 
+4.
 
 ```shell
     $ npm start
